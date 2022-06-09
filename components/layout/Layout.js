@@ -8,7 +8,7 @@ export default function Layout({ children }) {
           <a className="nav-link">Home</a>
         </Link>
         <Link href="/contact">
-          <a className="nav-link">contact</a>
+          <a className="nav-link">Contact</a>
         </Link>
         <Link href="/login">
           <a className="nav-link">Log in</a>

@@ -1,13 +1,12 @@
+/* General */
 body {
   font-family: sans-serif;
   margin: 0;
 }
-
 nav {
   background: darkred;
   padding: 1rem;
 }
-
 nav a {
   color: white;
   margin-right: 10px;
@@ -16,30 +15,31 @@ a {
   color: inherit;
   text-decoration: none;
 }
+ul {
+  list-style: none;
+  line-height: 3em;
+  font-size: 1.5em;
+}
+ul li:before {
+  content: "";
+  width: .5em;
+  height: .5em;
+  background-color: rgb(144, 11, 11);
+  float: left;
+  margin: 1.2em .25em 0;
+  border-radius: 50%;
+}
 .nav-link {
   text-decoration: none;
   font-size: larger;
 }
 
+/* Home */
 .container {
   display: grid;
   max-width: 1000px;
   margin: 0 auto;
   padding: 1rem;
-}
-.form-container {
-
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-}
-.form-img {
-  margin: 15% 3%;
-  min-width: 100px;
-  display: none;
 }
 .title {
   text-decoration: none;
@@ -63,21 +63,72 @@ a {
   width: 100%;
   max-width: fit-content;
 }
-button {
-  display: table;
-  width: 100%;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  box-sizing: border-box;
-  margin-bottom: 2.5rem;
-  background-color: #0070f3;
-  color: #fff;
-  cursor: pointer;
+
+/* Detail */
+.go-back {
+  max-width: 80px;
+  max-height: 40px;
+  border: solid 1px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+    background-color: darkred
+}
+.go-back:hover {
+  color: darkred;
+  background-color:rgb(198, 182, 183);
 }
 
-button:hover {
-  background-color: #0060e9;
+/* Form */
+.form-container {
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+.form-img {
+  margin: 30% 30%;
+  min-width: 100px;
+  display: none;
+}
+.submit {
+  width: 80px;
+  height: 35px;
+  border: solid 1px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: darkred
+}
+.submit:hover {
+  color: darkred;
+  background-color: rgb(198, 182, 183);
+} 
+.invalid {
+  margin: 0;
+  color: red;
+}
+.is-invalid {
+  border-color: red;
+}
+
+.form-content {
+  margin:0 0 10% 0;
+}
+.subject {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+}
+.subject-option {
+  background-color: rgb(255, 246, 246);
+}
+.message {
+  height: 100px;
 }
 input {
   display: table;
@@ -88,7 +139,6 @@ input {
   box-sizing: border-box;
   margin-bottom: 2.5rem;
 }
-
 input:focus {
   outline: none;
   border-color: #0070f3;
@@ -96,7 +146,7 @@ input:focus {
 form {
   display: table;
   min-width: 350px;
-  margin: 0 auto;
+  margin: 0;
   padding: 1rem;
 }
 
@@ -106,13 +156,13 @@ label {
   margin-bottom: 0.5rem;
   color: #3b3b3b;
 }
+
+
 @media (max-width: 400px) {
   button {
     max-width: 50%;
   }
-  input {
-    max-width: 50%;
-  }
+
   .form-container{
     max-width: fit-content;
   }

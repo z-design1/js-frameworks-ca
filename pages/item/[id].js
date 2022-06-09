@@ -5,19 +5,26 @@ import Layout from "../../components/layout/Layout";
 
 export default function Item({ item }) {
 return (
-<Layout >
-    <Head title={item.name}/>
+<Layout>
+    <button href="/" className="go-back">Go back</button>
+    <Head title={item.name} />
     <h1>{item.name}</h1>
-    {/* <img src={item.image} /> */}
+    <img src={item.image} />
+    <ul>
+    <li>Status: {item.status}</li>
+    <li>Gender: {item.gender}</li>
+    <li>Species: {item.species}</li>
+    <li>Planet: {item.origin.name}</li>
+    </ul>
 </Layout>
 );
 }
 export async function getStaticPaths() {
 try {
     const response = await axios.get(BASE_URL);
-    const items = response.data;
+    const items = response.data.results;
     const paths = items.map((item) => ({
-    params: { id: item.id},
+    params: { id: item.id.toString()},
     }));
     console.log(paths);
     return { paths:paths, fallback: false };
